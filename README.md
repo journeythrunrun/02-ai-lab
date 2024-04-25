@@ -9,7 +9,9 @@
 
 A Q&A
 B md파일 개인템플릿
-Z Self Feedback   
+
+Self Feedback
+Reference
 ```
 
 ## 0 추구
@@ -34,7 +36,7 @@ Z Self Feedback
   + 날짜-파일순서_주제및내용.md  
 - crawling : 인사이트 내용도 있음  
 
-## A Q&A
+## A Q&A[1]
 ### A.1 프로젝트 내용 공유 관련 핵심 내용 
 - Q1 (다른 사람 질문) 컨텐츠 활용 동의안 관련 문의. 수업과정에서 진행한 프로젝트를 포트폴리오로 쓸 수 없는가?  
   > A1 충분히 활용 가능. 이후 경진대회 데이터와 관련 해서만 일부 제약사항이 있을 수 있음  
@@ -55,11 +57,16 @@ Z Self Feedback
 ```
 1
   
-Z Self Feedback   
+Self Feedback   
+Reference
 ```
 ## 1  
-## Z Self Feedback   </code>
+## Self Feedback   
+## Reference </code>
 </pre>
 
-## Z Self Feedback   
-- OT 들은 후 -> '0 추구'항목에 기재
+## Self Feedback   
+> OT 들은 후 -> '0 추구'항목에 기재  
+
+## Reference
+[1] Upstage AI LAB 3기 Q&A
