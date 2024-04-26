@@ -54,49 +54,49 @@
     > 문법 창고에 개인 필기해뒀던 거라 형식 좀 다름 
 
     + ```
-    >> 1긴 딕셔너리 생성 : [dict(zip())]
-    : 1) target=dict(zip( key_list, value_list))
-        + list로 입력 줄 때, [0 ]*k 하면 값 동기화 되는지 체크 
-
-    : 2) value를 같은 값으로 만들어줄 때 * value를 
-      + dict1=dict1.fromkeys( key_list, 3_저장) 
-      + fromkeys는 반환형. 
-      + 3_디폴트 None 
-      + 3_value에 list형 저장하지 마삼. 공유돼버림. 
-        + [0]*k는 요소인 0을 복사하는 거라 괜찮지만 [[0]*k]*m에서 m은 요소인 list를 참조해버려서 값이 동기화돼버림. 
-
-    >> 2수정&없으면 추가 : [x.update([  [2,'aa'], [3, 'bb'] ]) ]
-    : 1) dict1["new"]=1 # new로 하면 변수명으로 인식.
-    : 2) x.update( ~ )
-    : 2.1) x.update( {1: 'sa' , 3:'a'}) 
-    :   input : 한 개의 딕셔너리
-
-    : 2.2) x.update([  [2,'aa'], [3, 'bb'] ])
-    :   input : 2차원 행열 /  각 행 =[키, 벨류]  
-    :   x.update( zip ([2,3], ['aa','bb']) ) # zip_튜플 
-
-    : X_2.3) ((키가 문자열일 때))  : x.update(e=90,a=10)  # 1) # 따옴표 빼야함
-
-    # 샛기~~셋겟
-    >> 3'에러 없는'조회 & 없으면 특정값을 출력&**저장** : [dict1.setdefault(key, 11)]
-    : 1) dict1.setdefault(key, 11) 
-      >  value 출력, 없는 키면 특정값을 출력 & 저장
-      + 해당 키 없으면 원하는 값 반환 가능 
-
-    >> 4조회만 & 없으면 특정값을 출력 :[x.get('a',0)]
-    : 1) x.get('a',0) # value 출력, 없는 키면 에러 없이 0 출력
-    : > <-> dict1[key1]은 원하는 값 반환은 없음
-
-    >> 5삭제 
-      +  없는 에러 대비 if문 필요. # -> 없을 시 -1을 저장하던지
-    : 1) 무조건 특정 키 : dict1.pop('b') # 키라서 얘도 인덱스임
-    : 2) 맨 위만 .popitem() 
-        + python 3.7부터 공식적으로 딕셔너리 순서 있대[GPT]
-        + 딕셔너리의 마지막 항목을 제거 & 그 항목을 튜플 형태로 반환
-
-    : 3) del dict1['a'] 
-    : 4) 전부 삭제 : dict1.clear()
-    ```
+      >> 1긴 딕셔너리 생성 : [dict(zip())]
+      : 1) target=dict(zip( key_list, value_list))
+          + list로 입력 줄 때, [0 ]*k 하면 값 동기화 되는지 체크 
+  
+      : 2) value를 같은 값으로 만들어줄 때 * value를 
+        + dict1=dict1.fromkeys( key_list, 3_저장) 
+        + fromkeys는 반환형. 
+        + 3_디폴트 None 
+        + 3_value에 list형 저장하지 마삼. 공유돼버림. 
+          + [0]*k는 요소인 0을 복사하는 거라 괜찮지만 [[0]*k]*m에서 m은 요소인 list를 참조해버려서 값이 동기화돼버림. 
+  
+      >> 2수정&없으면 추가 : [x.update([  [2,'aa'], [3, 'bb'] ]) ]
+      : 1) dict1["new"]=1 # new로 하면 변수명으로 인식.
+      : 2) x.update( ~ )
+      : 2.1) x.update( {1: 'sa' , 3:'a'}) 
+      :   input : 한 개의 딕셔너리
+  
+      : 2.2) x.update([  [2,'aa'], [3, 'bb'] ])
+      :   input : 2차원 행열 /  각 행 =[키, 벨류]  
+      :   x.update( zip ([2,3], ['aa','bb']) ) # zip_튜플 
+  
+      : X_2.3) ((키가 문자열일 때))  : x.update(e=90,a=10)  # 1) # 따옴표 빼야함
+  
+      # 샛기~~셋겟
+      >> 3'에러 없는'조회 & 없으면 특정값을 출력&**저장** : [dict1.setdefault(key, 11)]
+      : 1) dict1.setdefault(key, 11) 
+        >  value 출력, 없는 키면 특정값을 출력 & 저장
+        + 해당 키 없으면 원하는 값 반환 가능 
+  
+      >> 4조회만 & 없으면 특정값을 출력 :[x.get('a',0)]
+      : 1) x.get('a',0) # value 출력, 없는 키면 에러 없이 0 출력
+      : > <-> dict1[key1]은 원하는 값 반환은 없음
+  
+      >> 5삭제 
+        +  없는 에러 대비 if문 필요. # -> 없을 시 -1을 저장하던지
+      : 1) 무조건 특정 키 : dict1.pop('b') # 키라서 얘도 인덱스임
+      : 2) 맨 위만 .popitem() 
+          + python 3.7부터 공식적으로 딕셔너리 순서 있대[GPT]
+          + 딕셔너리의 마지막 항목을 제거 & 그 항목을 튜플 형태로 반환
+  
+      : 3) del dict1['a'] 
+      : 4) 전부 삭제 : dict1.clear()
+      ```
 
 - set
   + 생성  set set([10, 11, 12])    (다른 문자형에 set(씌우기)  
@@ -105,17 +105,18 @@
 
 - 파일 다루기
   + myFile = open("python.txt", "w") #파일 객체 = open(파일 경로, 열기 모드)
+    > "r" : 읽기 모드  
+  
   + myFile.write("Programming!")
   + myFile.close()
 
-  - "r" : 읽기 모드  
   
   + text = myFile.readline() : 재실행할 때마다 아직 안 읽었던 거 한 줄씩 반환
     > 빈줄 출력 체크
-
+    
   + all_text = myFile.reandlines() : 모든 줄 읽어서 각 줄을 요소로 가지는 리스트 반환
-  + = read_file.readline().strip() : \n제거용
-
+    + .strip() 자주 사용 : \n제거용
+  
 - 가변 매개변수 : [*매개변수]
   + 체크 
     + 가변 매개변수 뒤에 일반 매개변수 올 수 없음
@@ -256,36 +257,14 @@
   # fig, ax1 = plt.subplots() # 객체 생성 plt.subplots(nrows=1, ncols=1)   
   # > figure와 axes(2개의 그래프가 있으면 a1, a2)를 반환해줌
   ax1.plot(x, y1)
-  ax2 = ax1.twinx() # .twinx() 함수는 ax1과 축을 공유하는 새로운 Axes 객체 생성
+  # .twinx() 함수는 ax1과 축을 공유하는 새로운 Axes 객체 생성
+  ax2 = ax1.twinx() 
   ax2.bar(x, y2, color='deeppink', alpha=0.7, width=0.7)
   # > ax.임 plt.아님
 
   # - tight_layout() 함수는
   #  + ((서브플롯)) 모서리와 서브플롯의 모서리 사이의 여백(padding)을 설정
   # plt.tight_layout()
-
-
-  # x는 X축에 표시될 연도이고, y1, y2는 y 값 
-  x = ['2022', '2023', '2024']
-  y1 = np.array([1, 7, 14])
-  y2 = np.array([1, 3, 9])
-
-  # plt.subplots() 함수는 여러 개 그래프를 한 번에 가능, 객체 생성
-  # plt.subplots(nrows=1, ncols=1) = plt.subplots()
-  fig, ax1 = plt.subplots()
-
-  # -s(solid line style + square marker), alpha(투명도)
-  ax1.plot(x, y1, '-s', color='green', markersize=7, linewidth=5, alpha=0.7)
-
-  # .twinx() 함수는 ax1과 축을 공유하는 새로운 Axes 객체 생성
-  ax2 = ax1.twinx()
-  ax2.bar(x, y2, color='deeppink', alpha=0.7, width=0.7)
-
-  #plt.twinx()
-  #plt.bar(x, y2, color='deeppink', alpha=0.5)
-
-
-  plt.show()
   ``` 
   
 ### 2.2 seaborn
